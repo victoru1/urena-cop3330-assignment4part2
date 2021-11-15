@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ucf.assignments.ToDoListPageControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-11-15T16:14:39" hostname="BEMI" time="0.044">
+  <properties/>
+  <testcase name="descriptionChecker()" classname="ucf.assignments.ToDoListPageControllerTest" time="0.023"/>
+  <testcase name="completeAndIncompleteArrayMaker()" classname="ucf.assignments.ToDoListPageControllerTest" time="0.004"/>
+  <testcase name="addItem()" classname="ucf.assignments.ToDoListPageControllerTest" time="0.001"/>
+  <testcase name="dueDateGetter()" classname="ucf.assignments.ToDoListPageControllerTest" time="0.012"/>
+  <system-out><![CDATA[false
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

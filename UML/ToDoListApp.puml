@@ -1,0 +1,100 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class ToDoListMain{
+   + main(): void
+   + start(): void
+}
+
+class Item{
+ #String itemDescription;
+ #Date dueDate ;
+ #Boolean itemDone;
+
++Item()
++ getItemDescription() : String
++ setItemDescription(String itemDescription) : void
++ Date getDueDate() : String dueDate
++ setDueDate(String dueDate) : void
++ setItemDone(Boolean itemDone): void
++ getItemDone(): Boolean
++ toString(): String
+}
+
+
+class ToDoListPageController {
+-TextField itemName
+-DatePicker itemDueDate
+-ListView<Item> itemListView
+-TextField displayItem
+
++initialize(URL url, ResourceBundle rb): void
++addItem(): void
++chooseItem(): void
++deleteList(): void
++checkItemDone(): void
++deleteItem(): void
++editItem(): void
++saveList(): void
++displayAll(): void
++dueDateGetter(LocalDate localDate): String
++descriptionChecker (String description): int
++displayCompleted(ActionEvent actionEvent): void
++displayIncomplete(): void
+-showHelp(): void
+-showErrorAlert(String title, String text): void
+-showSuccessAlert(String title, String text): void
++sortItems(): void
++saveItemList(List<Item> item_list): boolean
++loadItems(): List<Item>
+
+
+}
+
+
+class EditItemPageController {
+
+#TextFiled itemDescription
+#DatePicker itemDate
+#Item item
++initialize(URL url, ResourceBundle resourceBundle): void
+-loadItem() : void
++dateFormatter (Item item): LocalDate
++dueDateGetter(LocalDate localDate): String
++descriptionChecker (String description): int
++setItem (Item item): void
+-showErrorAlert(String title, String text): void
+-showSuccessAlert(String title, String text): void
+
+}
+
+class DisplayController {
+
+#ListView<Item> dispplayAllitems;
++loadItems(List<Item> items): void
+
+}
+class HelpController{
+#TextArea helpView
++initialize(URL url, ResourceBundle resourceBundle): void
+-loadHelp():void
+}
+
+
+
+javafx.Application <|-- ToDoListMain
+java.io.Serializable<|--Item
+javafx.Initializable<|--ToDoListPageController
+javafx.Initializable<|-EditItemPageController
+javafx.Initializable<|--HelpController
+ToDoListPageController - ToDoListMain
+Item<-EditItemPageController
+Item<--ToDoListPageController
+ToDoListPageController-EditItemPageController
+ToDoListPageController-- DisplayController
+Item<- DisplayController
+ToDoListPageController-HelpController
+
+
+
+@enduml
